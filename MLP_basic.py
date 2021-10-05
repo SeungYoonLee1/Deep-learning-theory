@@ -7,9 +7,10 @@ x = torch.tensor([[2, 3]], dtype = torch.float, requires_grad = False)
 
 y = torch.tensor([[1]], dtype = torch.float, requires_grad = False)
 
-w1 = torch.tensor([[0.11, 0.12], [0.21,0.08]], dtype = torch.float, requires_grad = False)
+# The weight tensor requires gradient modification
+w1 = torch.tensor([[0.11, 0.12], [0.21,0.08]], dtype = torch.float, requires_grad = True)
 
-w1 = torch.tensor([[0.14],[0.15]], dtype = torch.float, requires_grad = False)
+w2 = torch.tensor([[0.14],[0.15]], dtype = torch.float, requires_grad = True)
 
 for i in range(EPOCHS):
     y_pred = x.mm(w1).mm(w2)
